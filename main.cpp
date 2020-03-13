@@ -193,11 +193,11 @@ int main()
     int playCMajor = playTriad(1,5,8);
 
     //2)
-    // addMeasure(); void return
+    addMeasure();
 
     //3) 
     
-    // addQuarterRest(); void return
+    addQuarterRest();
 
     //4)
     auto addBassTrack = groove(true, false);
