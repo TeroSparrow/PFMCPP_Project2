@@ -13,16 +13,17 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t)
  put them here: 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+ Integer                    int
+ Character                  char
+ Boolean                    bool
+ Floating Point             float
+ Double Floating Point      double
+ Void                       void  
+ Wide Character             wchar_t
+ Auto                       auto
+
+
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration function.
     give each declaration an initial value
@@ -66,6 +67,34 @@ void variableDeclarations()
     
     
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+    int mid = 2500;
+    int high = 12000;
+    int low = 80;
+
+    bool thisIsHard = true;
+    bool thisIsEasy = false;
+    bool thisIsDifficult = thisIsHard; //does this work?
+
+    char face = 'f';
+    char arm = 'a';
+    char leg = 'l';
+
+    float a = 1.0f;
+    float b = 2.0f;
+    float c = 3.0f;
+
+    double d = 10.0;
+    double e = 20.0;
+    double f = 30.0;
+
+    auto rate = 15;
+    auto pan = 0;
+    auto depth = 1;
+
+
+    ignoreUnused(mid, high, low, thisIsHard, thisIsDifficult, thisIsEasy, face, arm, leg, a, b, c, d, e, f, rate, pan, depth);
+
 }
 /*
  10 functions
@@ -80,70 +109,118 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int playTriad(int root, int third, int fifth)
+{
+    ignoreUnused(root, third, fifth);
+    return {};
+}
 /*
  2)
  */
-
+void addMeasure (int space = 4)
+{
+    ignoreUnused(space);
+}
 /*
  3)
  */
-
+void addQuarterRest (int space = 1)
+{
+    ignoreUnused(space);
+}
 /*
  4)
  */
-
+bool groove (bool drums = true, bool bass = true)
+{
+    ignoreUnused(drums, bass);
+    return {};
+}
 /*
  5)
  */
-
+float takeARide (bool passenger, int vehicleType)
+{
+    ignoreUnused(passenger, vehicleType);
+    return {};
+}
 /*
  6)
  */
-
+double buyGroceries(bool dietaryRestrictions, int fruits, int vegetables, int dairy, int meat)
+{
+    ignoreUnused(dietaryRestrictions, fruits, vegetables, dairy, meat);
+    return {};
+}
 /*
  7)
  */
-
+char AB (char A = '1', char B = '2')
+{
+    ignoreUnused(A, B);
+    return {};
+}
 /*
  8)
  */
-
+float setTimeDivision (int songTime, int fraction)
+{
+    ignoreUnused(songTime, fraction);
+    return {};
+}
 /*
  9)
  */
-
+int playNote (int noteFreq, int noteLength, int noteVel)
+{
+ignoreUnused(noteFreq, noteLength, noteVel);
+return {};
+}
 /*
  10)
  */
-
+double gamble (bool winLose, double earnings)
+{
+    ignoreUnused(winLose, earnings);
+    return{};
+}
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    int playCMajor = playTriad(1,5,8);
+
     //2)
+    addMeasure();
+
+    //3) 
     
-    //3)
-    
+    addQuarterRest();
+
     //4)
-    
+    auto addBassTrack = groove(true, false);
+
     //5)
-    
+    auto takeBus = takeARide (true, 3);
+
     //6)
-    
+    double vegetarianShoppingList = buyGroceries (true, 1, 2, 4, 0);
+
     //7)
-    
+    int takeTwelve = AB();
+
     //8)
-    
+    float tempo = setTimeDivision (225, 25);
+
     //9)
-    
+    double noteG5 = playNote(440, 2, 127);
+
     //10)
+    auto goToCasino = gamble (false, -500);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, playCMajor, addBassTrack, takeBus, vegetarianShoppingList, takeTwelve, tempo, noteG5, goToCasino);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
